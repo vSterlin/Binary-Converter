@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Binary Convert</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>  
+
+    <div class="calc">
+        <textarea id="textarr" rows="3" cols="30" placeholder="Enter decimal number here"></textarea>
+        <div class="buts">
+        <button id="sub" class="btn btn-secondary" onclick="decToBin()">Submit</button>
+        <button id="swap" class="btn btn-secondary" onclick="swap()">Swap</button>
+        </div>
+        <textarea id="result" rows="3" cols="30" readonly></textarea>
+    </div>
+    <script>
+
+        function swap() {
+            let swapBtn = document.getElementById('sub');
+            let textArea = document.getElementsByTagName('textarea')[0];
+            let attribute = swapBtn.getAttribute('onclick');
+            let resultArea = document.getElementById('result');
+            if(attribute=='decToBin()'){
+                //console.log('DECIMAL TO BINARY');
+                swapBtn.setAttribute('onclick', 'binToDec()');
+                textArea.setAttribute('placeholder', 'Enter a binary number here')
+            }
+            else{
+                //console.log('BINARY TO DECIMAL');
+                swapBtn.setAttribute('onclick', 'decToBin()');
+                textArea.setAttribute('placeholder', 'Enter a decimal number here')
+            }
+
+            resultArea.innerHTML= "";
+
+            
+            //console.log(swapBtn.onclick);
+        }
+
+
+        function decToBin(){
+        let textArea = document.getElementById('textarr');
+        let val = document.getElementsByTagName('textarea')[0].value;
+        val = parseInt(val);
+        let bin = '';
+        let newVal = val;
+        let remainder;
+        while(newVal!=0){
+            remainder = (newVal%2);
+            newVal = Math.floor(newVal /= 2);
+            //console.log(remainder);
+            bin = remainder + bin;
+        }
+        bin = parseInt(bin);
+
+        //textArea.innerHTML = '';
+
+        textArea.value= "";
+        document.getElementById('result').innerHTML = bin;
+        console.log(textArea);
+
+    }
+
+    function binToDec(){
+        let textArea = document.getElementById('textarr');
+        let val = document.getElementsByTagName('textarea')[0].value;
+        val += '';
+        let temp;
+        let newVal = 0;
+        let length = val.length;
+       for(let i=0;i<length;i++){
+        temp = parseInt(val.charAt(i));
+        //console.log(temp);
+        newVal += temp * Math.pow(2, length-1-i);
+        
+
+       }
+       //textArea.innerHTML = '';
+       textArea.value= "";
+       console.log(textArea);
+       document.getElementById('result').innerHTML = newVal;
+       //console.log(newVal);
+
+    }
+    </script>
+</body>
+
+</html>

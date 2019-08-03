@@ -1,0 +1,27 @@
+textarea {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    resize: none;
+
+}
+
+.buts {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+body {
+    background-color: orange;
+}
+
+.calc {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin: 10px;
+}
