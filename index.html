@@ -11,6 +11,15 @@
 </head>
 
 <body>  
+    <header>
+        <div class="navbar navbar-dark bg-dark">
+            <div class="d-flex justify-content-start">
+                    <a class="navbar-brand" href="#">Binary Converter <img class="icon" width="25" src="icons/icon.svg"></a>
+
+
+            </div>
+        </div>
+    </header>
 
     <div class="calc">
         <textarea id="textarr" rows="3" cols="30" placeholder="Enter decimal number here"></textarea>
@@ -35,7 +44,7 @@
             else{
                 //console.log('BINARY TO DECIMAL');
                 swapBtn.setAttribute('onclick', 'decToBin()');
-                textArea.setAttribute('placeholder', 'Enter a decimal number here')
+                textArea.setAttribute('placeholder', 'Enter a decimal number here');
             }
 
             resultArea.innerHTML= "";
