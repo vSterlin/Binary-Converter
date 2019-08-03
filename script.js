@@ -36,7 +36,6 @@ while(newVal!=0){
     //console.log(remainder);
     bin = remainder + bin;
 }
-bin = parseInt(bin);
 
 //textArea.innerHTML = '';
 
