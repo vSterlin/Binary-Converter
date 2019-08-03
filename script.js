@@ -24,10 +24,12 @@ function swap() {
 function decToBin(){
 let textArea = document.getElementById('textarr');
 let val = document.getElementsByTagName('textarea')[0].value;
+if(val.length!=0){
 val = parseInt(val);
 let bin = '';
 let newVal = val;
 let remainder;
+
 while(newVal!=0){
     remainder = (newVal%2);
     newVal = Math.floor(newVal /= 2);
@@ -40,8 +42,7 @@ bin = parseInt(bin);
 
 textArea.value= "";
 document.getElementById('result').innerHTML = bin;
-console.log(textArea);
-
+}
 }
 
 function binToDec(){
@@ -51,6 +52,8 @@ val += '';
 let temp;
 let newVal = 0;
 let length = val.length;
+if(val.length!=0){
+
 for(let i=0;i<length;i++){
 temp = parseInt(val.charAt(i));
 //console.log(temp);
@@ -60,8 +63,7 @@ newVal += temp * Math.pow(2, length-1-i);
 }
 //textArea.innerHTML = '';
 textArea.value= "";
-console.log(textArea);
 document.getElementById('result').innerHTML = newVal;
 //console.log(newVal);
-
+}
 }
