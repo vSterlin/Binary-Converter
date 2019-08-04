@@ -66,3 +66,10 @@ document.getElementById('result').innerHTML = newVal;
 //console.log(newVal);
 }
 }
+let buto = document.getElementsByClassName('btn');
+for(let i=0;i<buto.length;i++){
+buto[i].addEventListener('click', () => {
+    buto[i].blur();   
+  });
+}
+
